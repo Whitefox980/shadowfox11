@@ -1,3 +1,3 @@
-https://kayak.ai?q=FUZZ
-https://www.hotelscombined.com?q=FUZZ
-https://www.checkfelix.com/search?input=FUZZ
+https://kayak.ai?q=FUZZ,xss,1
+https://www.hotelscombined.com?q=FUZZ,xss,2
+https://www.checkfelix.com/search?input=FUZZ,xss,2

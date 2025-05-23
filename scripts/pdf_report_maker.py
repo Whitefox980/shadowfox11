@@ -1,10 +1,14 @@
-from fpdf import FPDF
+from reportlab.lib.pagesizes import A4
+from reportlab.pdfgen import canvas
 
-def generate_pdf(url, payload, filename="report.pdf"):
-    pdf = FPDF()
-    pdf.add_page()
-    pdf.set_font("Arial", size=12)
-    pdf.cell(200, 10, txt="ShadowFox Vulnerability Report", ln=True)
-    pdf.cell(200, 10, txt=f"URL: {url}", ln=True)
-    pdf.cell(200, 10, txt=f"Payload: {payload}", ln=True)
-    pdf.output(f"reports/{filename}")
+def generate_pdf_report(url, valid_hits, path="reports/"):
+    file_path = f"{path}report_{url.replace('://', '_').replace('/', '_')}.pdf"
+    c = canvas.Canvas(file_path, pagesize=A4)
+    c.setFont("Helvetica", 12)
+    c.drawString(100, 800, f"ShadowFox Report for: {url}")
+    y = 760
+    for hit in valid_hits:
+        c.drawString(100, y, f"- {hit}")
+        y -= 20
+    c.save()
+    print(f"[PDF] Izveštaj snimljen: {file_path}")
