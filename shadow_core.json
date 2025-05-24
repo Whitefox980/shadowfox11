@@ -1,3 +1,14 @@
+
+{
+  "DefaultHuman": {
+    "headers": {
+      "User-Agent": "Mozilla/5.0",
+      "Accept-Language": "en-US"
+    },
+    "behavior": "curious_clicker"
+  }
+}
+
 {
   "meta": {
     "project": "ShadowFox",

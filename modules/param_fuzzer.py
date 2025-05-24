@@ -14,3 +14,5 @@ def find_fuzzable_param(base_url):
         except:
             continue
     return candidates
+# modules/param_fuzzer.py
+

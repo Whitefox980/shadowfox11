@@ -1,8 +1,10 @@
 __pycache__/
 *.pyc
-.env
+env/
 *.log
-*.zip
-*.tar
-*.gz
+*.sqlite3
+*.db
+reports/*.pdf
 *.bak
+.idea/
+.vscode/

